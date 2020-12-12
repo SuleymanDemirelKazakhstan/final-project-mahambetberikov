@@ -1,3 +1,17 @@
+<?php 
+	require "header.php";
+?>
+
+<?php 
+	$id = $_GET['id'];
+	$res = mysqli_query($connection, "SELECT * FROM laptop WHERE id=".$id);
+	$res = mysqli_fetch_assoc($res);
+
+	$photo = mysqli_query($connection, "SELECT * FROM gallery WHERE laptop_id=".$id);
+	$photo = mysqli_fetch_assoc($photo);
+?>
+
+
 <section class="container">
 	<div class="card">
 		<div class="image_content">
